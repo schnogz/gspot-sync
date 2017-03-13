@@ -2,8 +2,6 @@
 const request = require('request');
 
 module.exports = {
-  // fetches current BTC price across multiple exchanges
-  // using X-testing header allows for 100 requests per 24 hours
   test: (req, res) => {
     request({
       url: ''

@@ -8,8 +8,8 @@ module.exports = () => {
   const http = require('http');
   const logger = require('morgan');
   const path = require('path');
-  const apiController = require('./controllers/api');
-  const socketController = require('./controllers/socket');
+  const googlePlayCtrl = require('./api/googlePlayController');
+  const spotifyCtrl = require('./api/spotifyController');
 
   // configure express
   const app = express();
@@ -18,10 +18,10 @@ module.exports = () => {
   app.use(logger('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({extended: true}));
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, 'app')));
 
   // endpoint definitions
-  app.get('/test', apiController.test);
+  app.get('/test', spotifyCtrl.test);
 
   // error handler
   app.use(errorHandler());
@@ -31,8 +31,4 @@ module.exports = () => {
     console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('✓'), app.get('port'), app.get('env'));
     console.log('  Press CTRL-C to stop\n');
   });
-
-  // setup socket listener
-  let socketListener = http.createServer(app).listen(3001);
-  socketController(socketListener);
 };
