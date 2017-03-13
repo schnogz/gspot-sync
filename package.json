@@ -1,0 +1,40 @@
+{
+  "name": "gspot-sync",
+  "version": "1.0.0",
+  "description": "An Electron app to manage and sync playlists between Google Play Music and Spotify",
+	"author": "Andrew Schneider <andrew.mark.schneider@gmail.com> (http://schnogz.com)",
+	"license": "MIT",
+	"homepage": "https://github.com/schnogz/gspot-sync#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schnogz/gspot-sync.git"
+  },
+  "keywords": [
+    "electron",
+		"react",
+		"google play music",
+		"spotify",
+		"playlists"
+  ],
+  "bugs": {
+    "url": "https://github.com/schnogz/gspot-sync/issues"
+  },
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "start-prod": "NODE_ENV=production electron main.js"
+  },
+  "dependencies": {
+    "body-parser": "1.16.1",
+    "bower": "1.8.0",
+    "chalk": "1.1.3",
+    "electron-prebuilt": "1.4.13",
+    "electron-reload": "1.1.0",
+    "errorhandler": "1.5.0",
+    "express": "4.14.1",
+    "express-status-monitor": "0.1.9",
+    "morgan": "1.8.1",
+    "request": "2.79.0",
+    "socket.io": "1.7.3"
+  }
+}
