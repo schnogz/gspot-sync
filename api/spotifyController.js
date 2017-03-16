@@ -1,12 +1,13 @@
 // dependencies
 const SpotifyWebApi = require('spotify-web-api-node');
+const apiKeys = require('./apiKeys');
 
 var redirect_uri = 'http://localhost:3000/loginCallback';  // login callback URL
 var scopes = ['user-read-private', 'user-read-email'];     // requested privileges
 
 var spotifyApi = new SpotifyWebApi({
-  clientId : client_id,
-  clientSecret : client_secret,
+  clientId : apiKeys.client_id,
+  clientSecret : apiKeys.client_secret,
   redirectUri : redirect_uri
 });
 

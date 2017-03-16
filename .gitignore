@@ -1,6 +1,3 @@
-# API secrets
-api/apiKeys.js
-
 # Logs
 logs
 *.log
