@@ -8,6 +8,7 @@ module.exports = () => {
   const http = require('http');
   const logger = require('morgan');
   const path = require('path');
+  const cookieParser = require('cookie-parser');
   const googlePlayCtrl = require('./api/googlePlayController');
   const spotifyCtrl = require('./api/spotifyController');
 
@@ -18,10 +19,14 @@ module.exports = () => {
   app.use(logger('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({extended: true}));
+  app.use(cookieParser());
   app.use(express.static(path.join(__dirname, 'app')));
 
   // endpoint definitions
-  app.get('/test', spotifyCtrl.test);
+  // TODO: create spotify router
+  app.get('/login', spotifyCtrl.login);
+  app.get('/loginCallback', spotifyCtrl.loginCallback);
+  app.get('/refreshAccessToken', spotifyCtrl.refreshAccessToken);
 
   // error handler
   app.use(errorHandler());
