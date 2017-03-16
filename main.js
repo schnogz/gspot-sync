@@ -1,30 +1,21 @@
 const { app, BrowserWindow } = require('electron');
-require('electron-reload')(__dirname);
 
 // keep reference to window object otherwise it will be
 // closed automatically when the JS object is garbage collected.
-let win;
+let mainWindow;
 
 function createWindow () {
-
-  // start express server
-  app.server = require(__dirname + '/server.js')();
-
   // configure window and load app
-  if (process.env.NODE_ENV == 'production') {
-    win = new BrowserWindow({ fullscreen: true });
-  } else {
-    win = new BrowserWindow({
-      width: 1200,
-      height: 1000
-    });
-    win.webContents.openDevTools();
-  }
+  mainWindow = new BrowserWindow({
+    width: 1200,
+    height: 1000
+  });
 
-  win.loadURL('http://localhost:3000');
+  mainWindow.loadURL('file://' + __dirname + '/dist/index.html');
+  mainWindow.webContents.openDevTools();
 
-  win.on('closed', () => {
-    win = null
+  mainWindow.on('closed', () => {
+    mainWindow = null
   })
 }
 
@@ -38,7 +29,7 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
-  if (win === null) {
+  if (mainWindow === null) {
     createWindow()
   }
 });
