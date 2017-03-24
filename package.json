@@ -20,7 +20,6 @@
   },
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js",
     "dev": "node server.js",
     "postinstall": "webpack -p --config webpack.config.js"
   },
