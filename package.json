@@ -1,7 +1,7 @@
 {
   "name": "gspot-sync",
   "version": "1.0.0",
-  "description": "An Electron app to manage and sync playlists between Google Play Music and Spotify",
+  "description": "An React app to manage and sync playlists between Google Play Music and Spotify",
   "author": "Andrew Schneider <andrew.mark.schneider@gmail.com> (http://schnogz.com)",
   "license": "MIT",
   "homepage": "https://github.com/schnogz/gspot-sync#readme",
@@ -10,7 +10,6 @@
     "url": "git+https://github.com/schnogz/gspot-sync.git"
   },
   "keywords": [
-    "electron",
     "react",
     "google play music",
     "spotify",
