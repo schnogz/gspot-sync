@@ -1,41 +1,45 @@
 {
-  "name": "gspot-sync",
+  "name": "spotify-concert-playlists",
   "version": "1.0.0",
-  "description": "An React app to manage and sync playlists between Google Play Music and Spotify",
+  "description": "Spotify playlist generator based on upcoming shows in given city",
   "author": "Andrew Schneider <andrew.mark.schneider@gmail.com> (http://schnogz.com)",
   "license": "MIT",
-  "homepage": "https://github.com/schnogz/gspot-sync#readme",
+  "homepage": "https://github.com/schnogz/spotify-concert-playlists#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/schnogz/gspot-sync.git"
+    "url": "git+https://github.com/schnogz/spotify-concert-playlists.git"
   },
   "keywords": [
-    "react",
-    "google play music",
     "spotify",
-    "playlists"
+    "playlists",
+    "react"
   ],
   "bugs": {
-    "url": "https://github.com/schnogz/gspot-sync/issues"
+    "url": "https://github.com/schnogz/spotify-concert-playlists/issues"
   },
   "main": "main.js",
   "scripts": {
-    "dev": "node server.js",
+    "start": "node server.js",
     "postinstall": "webpack -p --config webpack.config.js"
   },
   "dependencies": {
+    "autoprefixer": "6.7.7",
     "babel-core": "6.24.0",
     "babel-loader": "6.4.1",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "6.24.0",
     "babel-preset-react": "6.23.0",
+    "babel-runtime": "^6.23.0",
     "body-parser": "1.17.1",
     "cookie-parser": "1.4.3",
     "css-loader": "0.27.3",
-    "electron-prebuilt": "1.4.13",
     "errorhandler": "1.5.0",
     "express": "4.15.2",
+    "html-loader": "0.4.5",
+    "lodash": "^4.17.4",
     "morgan": "1.8.1",
     "node-sass": "4.5.1",
+    "normalize.css": "5.0.0",
     "querystring": "0.2.0",
     "react": "15.4.2",
     "react-dom": "15.4.2",

@@ -16,7 +16,6 @@ const config = require('./webpack.config');
 const compiler = webpack(config);
 
 // controllers
-const googlePlayCtrl = require('./api/googlePlayController');
 const spotifyCtrl = require('./api/spotifyController');
 
 // configure middleware
