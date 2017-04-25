@@ -1,14 +1,23 @@
 // dependencies
+const router = require('express').Router();
 const SpotifyWebApi = require('spotify-web-api-node');
-const apiKeys = require('./apiKeys');
+const apiKeys = require('./../../config/apiKeys');
+
+router.get('/', function(req, res, next) {
+  res.send({ test: 'test' });
+});
+module.exports = router;
+
+
+/*
 
 var redirect_uri = 'http://localhost:3000/loginCallback';  // login callback URL
 var scopes = ['user-read-private', 'user-read-email'];     // requested privileges
 
 var spotifyApi = new SpotifyWebApi({
-  clientId : apiKeys.client_id,
-  clientSecret : apiKeys.client_secret,
-  redirectUri : redirect_uri
+  clientId: apiKeys.client_id,
+  clientSecret: apiKeys.client_secret,
+  redirectUri: redirect_uri
 });
 
 module.exports = {
@@ -52,3 +61,5 @@ module.exports = {
       });
   }
 };
+
+*/

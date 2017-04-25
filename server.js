@@ -6,9 +6,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const cors = require('cors');
-const passport = require('passport');
 const errorhandler = require('errorhandler');
-const mongoose = require('mongoose');
 
 var isProduction = process.env.NODE_ENV === 'production';
 
