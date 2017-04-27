@@ -1,4 +1,5 @@
-// dependencies
+// http://www.songkick.com/developer
+// https://github.com/MrJaeger/songkick-api
 const router = require('express').Router();
 const Songkick = require('songkick-api');
 const apiKeys = require('./../../config/apiKeys');

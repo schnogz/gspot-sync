@@ -1,3 +1,5 @@
+// https://developer.spotify.com/web-api/
+// https://github.com/thelinmichael/spotify-web-api-node
 const router = require('express').Router();
 const SpotifyWebApi = require('spotify-web-api-node');
 const apiKeys = require('./../../config/apiKeys');
