@@ -1,6 +1,7 @@
 var router = require('express').Router();
 
-router.use('/', require('./spotifyApi'));
+router.use('/spotify', require('./spotifyApi'));
+router.use('/songkick', require('./songkickApi'));
 
 router.use(function(err, req, res, next){
   if (err.name === 'ValidationError') {
