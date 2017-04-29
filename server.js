@@ -1,19 +1,20 @@
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const errorhandler = require('errorhandler');
+const express = require('express');
 const fs = require('fs');
 const http = require('http');
 const path = require('path');
 const methods = require('methods');
-const express = require('express');
-const bodyParser = require('body-parser');
+const requestIp = require('request-ip');
 const session = require('express-session');
-const cors = require('cors');
-const errorhandler = require('errorhandler');
 
 var isProduction = process.env.NODE_ENV === 'production';
-
 var app = express();
 
 // setup middleware
 app.use(cors());
+app.use(requestIp.mw());
 app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
