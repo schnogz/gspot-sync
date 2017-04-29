@@ -1,5 +1,6 @@
 var router = require('express').Router();
 
-router.use('/api', require('./api'));
+router.use('/spotify', require('./spotify'));
+router.use('/songkick', require('./songkick'));
 
 module.exports = router;

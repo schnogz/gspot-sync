@@ -19,11 +19,12 @@ router.get('search/events', function(req, res, next) {
 });
 
 router.get('/search/location', function(req, res, next) {
+  console.log(req.headers['x-forwarded-for']);
   songkickApi.searchLocations({
     'location' : 'geo:44.9325881,-93.26754419999999'
   })
     .then(function(events) {
-      console.info(events);
+     // console.info(events);
       res.send(events);
     });
 });
