@@ -1,7 +1,7 @@
 // http://www.songkick.com/developer
 // https://github.com/MrJaeger/songkick-api
 const router = require('express').Router();
-const Songkick = require('songkick-api');
+const Songkick = require('songkick-api-node');
 const apiKeys = require('./../../config/apiKeys');
 
 const songkickApi = new Songkick(apiKeys.songkick.key);
@@ -20,7 +20,7 @@ router.get('/search/events', (req, res, next) => {
     .then((userLocations) => {
       // TODO: check if locations are returned, inform client
       // TODO: figure out effective way to handle paging...
-      songkickApi.getMetroAreaCalendar(userLocations[0].metroArea.id, { page: 2, per_page: 50 })
+      songkickApi.getLocationUpcomingEvents(userLocations[0].metroArea.id)
         .then((response) => {
           res.send(response);
         }, (error) => {
