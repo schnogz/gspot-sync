@@ -19,28 +19,16 @@ router.get('/search/events', (req, res, next) => {
   songkickApi.searchLocations({ 'location' : locationRequest })
     .then((userLocations) => {
       // TODO: check if locations are returned, inform client
-      getEvents(userLocations[0].metroArea.id)
+      // TODO: figure out effective way to handle paging...
+      songkickApi.getMetroAreaCalendar(userLocations[0].metroArea.id, { page: 2, per_page: 50 })
         .then((response) => {
           res.send(response);
         }, (error) => {
-          res.status(500).json({ error: 'Songbird event lookup failed', stacktrace: error });
+          res.status(500).json({ error: 'Songbird location based events lookup failed', stacktrace: error });
         });
-    }, (error) => {
-      res.status(500).json({ error: 'Songbird metroId lookup failed', stacktrace: error });
-    });
+      }, (error) => {
+        res.status(500).json({ error: 'Songbird metroId lookup failed', stacktrace: error });
+      });
 });
-
-function getEvents (metroId) {
-  return new Promise((resolve, reject) => {
-    songkickApi.searchEvents({
-      'location': 'sk:' + metroId
-    }).then((response) => {
-      console.info(response);
-      return resolve(response);
-    }, (error) => {
-      return reject(error)
-    });
-  })
-}
 
 module.exports = router;
