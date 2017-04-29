@@ -45,7 +45,7 @@ router.get('/loginCallback', function(req, res, next) {
     });
 });
 
-router.get('/refreshAccessToken', function(req, res, next) {
+router.get('/refresh', function(req, res, next) {
   spotifyApi.refreshAccessToken()
     .then(function(data) {
       // save the new access token
