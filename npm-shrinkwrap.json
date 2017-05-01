@@ -33,9 +33,9 @@
       "resolved": "https://registry.npmjs.org/encoding/-/encoding-0.1.12.tgz"
     },
     "es6-promise": {
-      "version": "3.1.2",
-      "from": "es6-promise@3.1.2",
-      "resolved": "https://registry.npmjs.org/es6-promise/-/es6-promise-3.1.2.tgz"
+      "version": "4.1.0",
+      "from": "es6-promise@4.1.0",
+      "resolved": "https://registry.npmjs.org/es6-promise/-/es6-promise-4.1.0.tgz"
     },
     "fbjs": {
       "version": "0.8.12",
@@ -60,9 +60,9 @@
       "resolved": "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz"
     },
     "iconv-lite": {
-      "version": "0.4.16",
+      "version": "0.4.17",
       "from": "iconv-lite@>=0.4.13 <0.5.0",
-      "resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.16.tgz"
+      "resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.17.tgz"
     },
     "immutable": {
       "version": "3.8.1",
