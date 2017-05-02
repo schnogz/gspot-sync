@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const DashboardPlugin = require('webpack-dashboard/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
@@ -69,10 +68,6 @@ const rules = [
 if (isProduction) {
   // Production plugins
   plugins.push(
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
@@ -104,12 +99,6 @@ if (isProduction) {
     }
   );
 } else {
-  // Development plugins
-  plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
-    new DashboardPlugin()
-  );
-
   // Development rules
   rules.push(
     {
@@ -151,28 +140,5 @@ module.exports = {
       jsSourcePath,
     ],
   },
-  plugins,
-  devServer: {
-    contentBase: isProduction ? './build' : './public',
-    historyApiFallback: true,
-    port: 3000,
-    compress: isProduction,
-    inline: !isProduction,
-    hot: !isProduction,
-    host: '0.0.0.0',
-    stats: {
-      assets: true,
-      children: false,
-      chunks: false,
-      hash: false,
-      modules: false,
-      publicPath: false,
-      timings: true,
-      version: false,
-      warnings: true,
-      colors: {
-        green: '\u001b[32m',
-      },
-    },
-  },
+  plugins
 };
