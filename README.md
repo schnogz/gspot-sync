@@ -1,15 +1,12 @@
-# gspot-sync
-A react web app to manage and sync playlists between Google Play Music and Spotify
-
+# spotify-concert-playlists
+A react web app that creates Spotify playlists based on upcoming shows in the users metro area.
+This app is still under development.
 
 ## Setup
 * Run `npm install`
 
 ## Local Development
-* Run `npm run dev` to fire up Webpack
-* In another terminal window run `npm start` to start electron
+Coming soon.
 
 ## Running Production
-* Run `npm run postinstall` to compile all your assets into `dist/bundle.js`
-* Change the script tag in `dist/index.html` to use `bundle.js` as its source
-* Run `npm start` to start electron
+Coming soon.
