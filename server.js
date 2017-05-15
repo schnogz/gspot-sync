@@ -19,7 +19,7 @@ app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(require('method-override')());
-app.use(session({ secret: 'conduit', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false  }));
+app.use(session({ secret: 'conduit', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
 app.use(require('./routes'));
 
 // TODO: use express as static content server instead of webpack
@@ -48,17 +48,17 @@ if (!isProduction) {
       error: err
     }});
   });
+} else {
+  // production error handler
+  // no stacktraces leaked to user
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.json({'errors': {
+      message: err.message,
+      error: {}
+    }});
+  });
 }
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.json({'errors': {
-    message: err.message,
-    error: {}
-  }});
-});
 
 // start server
 var server = app.listen(process.env.PORT || 3001, function() {

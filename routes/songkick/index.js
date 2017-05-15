@@ -7,7 +7,7 @@ const apiKeys = require('./../../config/apiKeys');
 const songkickApi = new Songkick(apiKeys.songkick.key);
 
 router.get('/search/events', (req, res, next) => {
-  // TODO: need to acount for different lookup types e.g. lat/long or ip
+  // TODO: need to account for different lookup types e.g. lat/long or ip
   let requestIp = req.clientIp;
   let locationRequest = 'ip:' + requestIp;
 

@@ -23,9 +23,9 @@
       "resolved": "https://registry.npmjs.org/core-js/-/core-js-2.4.1.tgz"
     },
     "create-react-class": {
-      "version": "15.5.2",
+      "version": "15.5.3",
       "from": "create-react-class@>=15.5.1 <16.0.0",
-      "resolved": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.5.2.tgz"
+      "resolved": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.5.3.tgz"
     },
     "encoding": {
       "version": "0.1.12",
@@ -130,9 +130,9 @@
       "resolved": "https://registry.npmjs.org/promise/-/promise-7.1.1.tgz"
     },
     "prop-types": {
-      "version": "15.5.8",
+      "version": "15.5.10",
       "from": "prop-types@>=15.5.7 <16.0.0",
-      "resolved": "https://registry.npmjs.org/prop-types/-/prop-types-15.5.8.tgz"
+      "resolved": "https://registry.npmjs.org/prop-types/-/prop-types-15.5.10.tgz"
     },
     "react": {
       "version": "15.5.4",

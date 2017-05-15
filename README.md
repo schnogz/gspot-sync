@@ -1,6 +1,10 @@
-# gspot-sync
-A react web app to manage and sync playlists between Google Play Music and Spotify
+# spotify-concert-playlists
+[![Dependencies](https://david-dm.org/schnogz/spotify-concert-playlists.svg)](https://david-dm.org/schnogz/spotify-concert-playlists.svg)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/schnogz/spotify-concert-playlists/issues)
 
+## Overview
+A web app that creates Spotify playlists filled with tunes from bands that will soon be in the users
+current or chosen location.
 
 ## Setup
 * Run `npm install`
