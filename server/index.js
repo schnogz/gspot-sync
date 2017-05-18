@@ -22,11 +22,6 @@ app.use(require('method-override')());
 app.use(session({ secret: 'conduit', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
 app.use(require('./routes/index'));
 
-// TODO: use express as static content server instead of webpack
-app.use(express.static(__dirname + '/build'));
-
-// error handling
-
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -34,9 +29,9 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// development error handler
-// will print stacktrace
+// development config
 if (!isProduction) {
+  // error handler will print stacktrace
   app.use(errorhandler());
   app.use(function(err, req, res, next) {
     console.log(err.stack);
@@ -49,8 +44,13 @@ if (!isProduction) {
     }});
   });
 } else {
-  // production error handler
-  // no stacktraces leaked to user
+  // production config
+  // serve built static assets
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+  }
+
+  // production error handler w/o stacktraces
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.json({'errors': {
@@ -62,5 +62,6 @@ if (!isProduction) {
 
 // start server
 var server = app.listen(process.env.PORT || 3001, function() {
-  console.log('Listening on port ' + server.address().port);
+  console.log('Express server listening on port ' + server.address().port + '!');
+  console.log('Remember! Webpack will proxy requests to /api on port 3000 to Express.');
 });

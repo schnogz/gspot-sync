@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.use('/session', require('./session/index'));
-router.use('/songkick', require('./songkick/index'));
+router.use('/api/session', require('./session/index'));
+router.use('/api/songkick', require('./songkick/index'));
 
 module.exports = router;
