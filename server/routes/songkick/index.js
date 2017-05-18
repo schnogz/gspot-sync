@@ -2,7 +2,7 @@
 // https://github.com/MrJaeger/songkick-api
 const router = require('express').Router();
 const Songkick = require('songkick-api-node');
-const apiKeys = require('./../../config/api-keys');
+const apiKeys = require('../../../config/api-keys');
 
 const songkickApi = new Songkick(apiKeys.songkick.key);
 

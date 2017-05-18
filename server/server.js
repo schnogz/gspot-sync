@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(require('method-override')());
 app.use(session({ secret: 'conduit', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
-app.use(require('./routes'));
+app.use(require('./routes/index'));
 
 // TODO: use express as static content server instead of webpack
 app.use(express.static(__dirname + '/build'));
