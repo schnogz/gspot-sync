@@ -22,7 +22,8 @@
     "build": "node scripts/build.js",
     "lint": "node scripts/lint.js",
     "release": "standard-version",
-    "start": "concurrently \"node server/index.js\" \"node scripts/start.js\""
+    "start": "concurrently \"node server/index.js\" \"node scripts/start.js\"",
+    "start-prod": "npm run build && NODE_ENV=production node server/index.js"
   },
   "babel": {
     "presets": [
