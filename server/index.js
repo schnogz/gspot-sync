@@ -8,8 +8,8 @@ const path = require('path');
 const methods = require('methods');
 const requestIp = require('request-ip');
 
-var isProduction = process.env.NODE_ENV === 'production';
-var app = express();
+const isProduction = process.env.NODE_ENV === 'production';
+let app = express();
 
 // setup middleware
 app.use(cors());
@@ -20,10 +20,15 @@ app.use(bodyParser.json());
 app.use(require('method-override')());
 app.use(require('./routes/index'));
 
-
-
 // development config
 if (!isProduction) {
+  /// catch 404 and forward to error handler
+  app.use(function(req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+  });
+
   // error handler will print stacktrace
   app.use(errorhandler());
   app.use(function(err, req, res) {
@@ -38,14 +43,8 @@ if (!isProduction) {
   // production config
   // serve built static assets
   app.use(express.static(path.join(__dirname, '../build')));
-
-  // production error handler w/o stacktraces
-  app.use(function(err, req, res) {
-    res.status(err.status || 500);
-    res.json({'errors': {
-      message: err.message,
-      error: {}
-    }});
+  app.use(function(req, res) {
+    res.status(404);
   });
 }
 
