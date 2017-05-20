@@ -1,6 +1,11 @@
 // Spotify api keys
 // Managed via https://developer.spotify.com/my-applications
 module.exports = {
-  client_id: '', // Your client id
-  client_secret: '' // Your secret
+  spotify: {
+    client_id: process.env.spotify_client_id ? process.env.spotify_client_id : '',
+    client_secret: process.env.spotify_client_secret ? process.env.spotify_client_secret : ''
+  },
+  songkick: {
+    key: process.env.songkick_key ? process.env.songkick_key : ''
+  }
 };
