@@ -17,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/schnogz/spotify-concert-playlists/issues"
   },
+  "engines": {
+    "node": "7.10.0"
+  },
   "proxy": "http://localhost:3001/",
   "scripts": {
     "build": "node scripts/build.js",
