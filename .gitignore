@@ -2,6 +2,7 @@
 *.swp
 .DS_Store
 .material-cache
+.eslintcache
 .tmp
 .idea
 .npm

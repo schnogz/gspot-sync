@@ -27,7 +27,7 @@
     "object-curly-spacing": 1,
     "react/no-unused-prop-types": 1,
     "max-len": 1,
-    "comma-dangle": 1,
+    "comma-dangle": ["warn", "only-multiline"],
     "space-in-parens": 1,
     "react/prefer-stateless-function": 1,
     "no-console": 1,
