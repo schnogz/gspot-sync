@@ -1,3 +1,60 @@
+import React from 'react'
+import styled from 'styled-components'
+import {MuiThemeProvider, getMuiTheme} from 'material-ui/styles';
+import {white} from 'material-ui/styles/colors';
+import Header from './Header';
+
+// Needed for onTouchTap (http://stackoverflow.com/a/34015469/988941)
+import injectTapEventPlugin from 'react-tap-event-plugin'
+
+injectTapEventPlugin();
+
+const Div = styled.div`
+  text-align: center;
+  padding-top: 200;
+  color: white;
+`;
+
+class App extends React.Component {
+  constructor(properties, context) {
+    super(properties, context);
+
+    this.muiTheme = getMuiTheme({
+      palette: {
+        alternateTextColor: white
+      },
+      appBar: {
+        height: 65,
+        color: '#84bd00',
+        showMenuIconButton: false
+      },
+    });
+
+    this.state = {
+      open: false
+    }
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider muiTheme={this.muiTheme}>
+        <div>
+          <Header />
+          <Div>
+            <h1>Upcoming Concerts</h1>
+          </Div>
+        </div>
+      </MuiThemeProvider>
+    )
+  }
+}
+
+export default App
+
+
+
+
+/* TODO: make controller view to fetch this data!
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -10,7 +67,7 @@ const App = () => (
 );
 
 export default App;
-*/
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -47,3 +104,4 @@ class App extends React.Component {
 }
 
 export default App;
+*/
